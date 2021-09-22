@@ -7,13 +7,20 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <SFML/Shape.hpp>
+//#include <SFML/Shape.hpp>
+
+
 #include "Bird.hpp"
 #include "Wall.hpp"
 #include "Walls.hpp"
 #include <vector>
 
 using namespace std;
+
+
+
+
+
 
 int main() {
     

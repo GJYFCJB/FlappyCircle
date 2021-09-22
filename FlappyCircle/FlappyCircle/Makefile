@@ -27,5 +27,5 @@ Walls.o: $(SRCDIR)/Walls.cpp
 	$(CC) $(CFLAGS) -c $<
 
 game: $(OBJS)
-	$(CC) $(LFLAGS) -o game $(OBJS)
+	$(CC) $(LFLAGS) -o flappyCircle $(OBJS)
 
