@@ -22,22 +22,25 @@ Wall::Wall (float screenHeight, int xIniPos, int width, sf::Texture & texture ) 
     upperHeight_ = screenHeight*upperHeightPct;
     lowerHeight_ = screenHeight*(1 - upperHeightPct - 0.25);
     
+    //set the walls' textrue and size
     upperWall_.setTexture(texture);
     upperWall_.setTextureRect(sf::IntRect(0, 0, width, upperHeight_));
     lowerWall_.setTexture(texture);
     lowerWall_.setTextureRect(sf::IntRect(0, 0, width, lowerHeight_));
     
+    //set the walls' x and y position
     upperWall_.setPosition(xIniPos_, 0);
     lowerWall_.setPosition(xIniPos_, screenHeight - lowerHeight_);
 }
 
+   //draw the objects to the render window
 void Wall::draw (sf::RenderWindow & window) {
     
     window.draw(std::move(upperWall_));
     window.draw(std::move(lowerWall_));
     
 }
-
+ //set wall's x positon
 void Wall::setXPosition(int xPos) {
     
     upperWall_.setPosition(xPos, 0);
@@ -45,12 +48,14 @@ void Wall::setXPosition(int xPos) {
     
 }
 
+// get wall's x position
 int Wall::getXPosition() {
     
     return upperWall_.getPosition().x;
     
 }
 
+ //set the walls' speed
 void Wall::move (float xSpeed) {
     
     upperWall_.move(xSpeed, 0);
@@ -58,12 +63,14 @@ void Wall::move (float xSpeed) {
     
 }
 
+// Cat went throught the wall, then got the score.
 bool Wall::isPastCat (Cat theCat) {
     
     return getXPosition() < theCat.getXPosition() - width_;
     
 }
 
+//when the cat hits the wall or ground or ceiling,then game is over.
 bool Wall::isCollided (Cat & theCat) {
     
     sf::FloatRect catBound = theCat.catRec_.getGlobalBounds();
