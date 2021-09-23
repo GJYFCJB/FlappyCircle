@@ -12,70 +12,47 @@
 
 class Cat {
     
-public:
+private:
+    
+    // catRec_ is the rectangle containing the texture/image of the cat
     sf::Sprite catRec_;
-    int radius_ = 30;
-    float velo_ = 0.2;
-    float accel_ = 0.2;
-    float xPos_ = 100;
-    float yPos_ = 100;
+    
+    // default value of the cat movement
+    float velo_ = 0.2;  // velocity
+    float accel_ = 0.2; // acceleration factor
+    float xPos_ = 100;  // initial x position - this won't be changed
+    float yPos_ = 100;  // initial y position
+    
+    // Add Wall class as friend to handle collision later
+    friend class Wall;
     
     
 public:
-    // Cat (int radius = 30, float velo = 0.2, float accel = 0.2, float xPos = 100, float yPos = 100)
-    Cat (sf::Texture & catTexture) {
-        
-        catRec_.setTexture(catTexture);
-        catRec_.setTextureRect(sf::IntRect(0, 0, 70, 55)); // texture image size: 30x23 pixels
-     
-    }
-    
-    void drop () {
-        
-        yPos_ += velo_;
-        velo_ += accel_;
-        catRec_.setPosition(xPos_, yPos_);
-        
-    }
-    
-    void bounce () {
-        
-        velo_ = -7 ; //hardcoded
-        
-    }
-    
-    bool hitCeiling () {
-        
-        return yPos_ <= 0;
-        
-    }
-    
-    bool hitGround (const Grass & grass) {
-        
-        sf::FloatRect catBound = catRec_.getGlobalBounds();
-        sf::FloatRect grassBound = grass.grassRec_.getGlobalBounds();
-        
-        return (catBound.intersects(grassBound));
-    }
-    
 
-    void draw (sf::RenderWindow & window) {
-        
-        window.draw(catRec_);
-        
-    }
+    // Constructor
+    Cat (sf::Texture & catTexture);
     
-    float getXPosition() {
-        
-        return xPos_;
-        
-    }
+    // drop the cat to the ground if no key is pressed
+    void drop ();
     
-    float getYPosition() {
-        
-        return yPos_;
-        
-    }
+    // jump the cat when Space is pressed
+    void jump (int jumpDist);
+    
+    // Did the cat hit the ceiling (top of the screen)?
+    bool hitCeiling ();
+    
+    // Did the cat hit the ground/grass?
+    bool hitGrass (const Grass & grass);
+    
+    
+    // Print out the cat to the display
+    void draw (sf::RenderWindow & window);
+    
+    // Get the horizontal coordinate
+    float getXPosition();
+    
+    // Get the vertical coordinate
+    float getYPosition();
     
 };
 

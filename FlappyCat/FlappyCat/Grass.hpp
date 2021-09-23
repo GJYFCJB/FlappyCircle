@@ -16,7 +16,10 @@ using namespace std;
 class Grass {
     
 private:
+    
+    // the rectangle that contains the grasss picture
     sf::Sprite grassRec_;
+    
     int width, height; // in pixels
     friend class Cat;
     
@@ -25,19 +28,9 @@ public:
     // the grass portion on the screen is to the bottom starting from the left edge to the right edge
     // width should be equal to screen width
     
-    Grass (int grassHeight, int scrWidth, int scrHeight, sf::Texture & grassTexture) {
-        
-        grassRec_.setTexture(grassTexture);
-        grassRec_.setTextureRect(sf::IntRect(0, 0, scrWidth, grassHeight));
-        grassRec_.setPosition(0, scrHeight - grassHeight);
-        
-    }
+    Grass (int grassHeight, int scrWidth, int scrHeight, sf::Texture & grassTexture);
     
-    void draw (sf::RenderWindow & window) {
-        
-        window.draw(grassRec_);
-        
-    }
+    void draw (sf::RenderWindow & window);
     
 };
 

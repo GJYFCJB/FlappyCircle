@@ -23,49 +23,13 @@ public:
     
 public:
     
-    WallQueue (int numWalls, int gap, sf::Texture & texture) {
-        
-        gap_ = gap;
-        numWalls_ = numWalls;
-        for (int i = 0; i < numWalls_; i++) {
-            
-            Wall newWall{1200, 500 + i*gap_, 100, texture};
-            walls.push_back (std::move(newWall));
-            
-        }
-        
-    }
+    WallQueue (int numWalls, int gap, sf::Texture & texture);
     
-    void draw (sf::RenderWindow & window) {
-        
-        for (Wall & wall: walls) {
-            wall.draw(window);
-        }
-        
-    }
+    void draw (sf::RenderWindow & window);
     
-    void move (float xSpeed) {
-        
-        for (int i = 0; i < numWalls_; i++) {
-            walls[i].move(xSpeed);
-        }
-    }
+    void move (float xSpeed);
     
-    int calculateScore (Cat & theCat) {
-        
-        int score = 0;
-        
-        for (Wall & w: walls) {
-            
-            if (w.isPastCat(theCat)) {
-                score++;
-            }
-            
-        }
-        
-        return score;
-        
-    }
+    int calculateScore (Cat & theCat);
 };
 
 #endif /* Walls_hpp */
