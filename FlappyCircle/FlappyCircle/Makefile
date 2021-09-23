@@ -23,7 +23,7 @@ Bird.o: $(SRCDIR)/Bird.cpp
 Wall.o: $(SRCDIR)/Wall.cpp
 	$(CC) $(CFLAGS) -c $<
 
-Walls.o: $(SRCDIR)/Walls.cpp
+Walls.o: $(SRCDIR)/Walls.cpp 
 	$(CC) $(CFLAGS) -c $<
 
 game: $(OBJS)

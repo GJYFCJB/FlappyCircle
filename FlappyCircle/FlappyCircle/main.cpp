@@ -55,6 +55,7 @@ int main() {
         if (bird.hitGround(screenHeight) || bird.hitCeiling()) {
             
             bird.bounce();
+            // print out GAME OVER
             
         }
         
@@ -62,6 +63,7 @@ int main() {
         if (bird.hitCeiling()) {
 
             bird.ricochet();
+            // print out GAME OVER
 
         }
         

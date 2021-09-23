@@ -49,8 +49,6 @@ public:
             wall.move(xSpeed);
         }
         
-//        wrapAround();
-        
     }
     
 };

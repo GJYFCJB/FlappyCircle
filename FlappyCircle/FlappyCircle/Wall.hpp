@@ -100,6 +100,14 @@ public:
         return *this;
         
     }
+    
+    bool isPastBird (arguments) {
+        
+        // if getXPosition() < bird.xposition
+        // return true
+        
+        
+    }
 
 };
 
