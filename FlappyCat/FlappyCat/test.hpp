@@ -1,14 +1,13 @@
 //
-//  test.hpp
+//  Test.hpp
 //  FlappyCat
 //
-//  Created by 谷金 on 9/23/21.
+//  Created by Quang Pham on 9/24/21.
 //
 
-#ifndef test_hpp
-#define test_hpp
+#ifndef Test_hpp
+#define Test_hpp
 
 #include <stdio.h>
-#include "Wall.hpp"
 
-#endif /* test_hpp */
+#endif /* Test_hpp */

@@ -12,7 +12,7 @@ CC=g++
 all : game
 
 # List of all object files to link together.
-OBJS = main.o Cat.o Wall.o Grass.o WallQueue.o HelperFunction.o
+OBJS = main.o Cat.o Wall.o Grass.o WallQueue.o HelperFunction.o TestFunctions.o
 
 main.o: $(SRCDIR)/main.cpp
 	$(CC) $(CFLAGS) -c $<
@@ -30,6 +30,9 @@ WallQueue.o: $(SRCDIR)/WallQueue.cpp
 	$(CC) $(CFLAGS) -c $<
 
 HelperFunction.o: $(SRCDIR)/HelperFunction.cpp
+	$(CC) $(CFLAGS) -c $<
+
+TestFunctions.o: $(SRCDIR)/TestFunctions.cpp
 	$(CC) $(CFLAGS) -c $<
 
 game: $(OBJS)

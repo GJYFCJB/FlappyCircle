@@ -13,6 +13,7 @@
 		1038C53E26FC6C2600114A41 /* Grass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1038C53C26FC6C2600114A41 /* Grass.cpp */; };
 		1038C54126FC6C5F00114A41 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1038C53F26FC6C5F00114A41 /* Wall.cpp */; };
 		1038C54426FC6C9000114A41 /* WallQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1038C54226FC6C9000114A41 /* WallQueue.cpp */; };
+		1057B0DF26FE54B2007D1DDC /* TestFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1057B0DD26FE54B2007D1DDC /* TestFunctions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		1038C54026FC6C5F00114A41 /* Wall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Wall.hpp; sourceTree = "<group>"; };
 		1038C54226FC6C9000114A41 /* WallQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WallQueue.cpp; sourceTree = "<group>"; };
 		1038C54326FC6C9000114A41 /* WallQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WallQueue.hpp; sourceTree = "<group>"; };
+		1057B0DD26FE54B2007D1DDC /* TestFunctions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestFunctions.cpp; sourceTree = "<group>"; };
+		1057B0DE26FE54B2007D1DDC /* TestFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestFunctions.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				1038C52F26FC6B2D00114A41 /* main.cpp */,
+				1057B0DD26FE54B2007D1DDC /* TestFunctions.cpp */,
+				1057B0DE26FE54B2007D1DDC /* TestFunctions.hpp */,
 				1038C53626FC6B7200114A41 /* Cat.cpp */,
 				1038C53726FC6B7200114A41 /* Cat.hpp */,
 				1038C53926FC6BD700114A41 /* HelperFunction.cpp */,
@@ -145,6 +150,7 @@
 			files = (
 				1038C53826FC6B7200114A41 /* Cat.cpp in Sources */,
 				1038C53026FC6B2D00114A41 /* main.cpp in Sources */,
+				1057B0DF26FE54B2007D1DDC /* TestFunctions.cpp in Sources */,
 				1038C53E26FC6C2600114A41 /* Grass.cpp in Sources */,
 				1038C53B26FC6BD700114A41 /* HelperFunction.cpp in Sources */,
 				1038C54126FC6C5F00114A41 /* Wall.cpp in Sources */,

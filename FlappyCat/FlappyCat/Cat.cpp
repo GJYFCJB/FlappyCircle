@@ -64,7 +64,17 @@ float Cat::getXPosition() {
     return xPos_;
 }
 
+// Set the horizontal coordinate - for testing
+void Cat::setXPosition(int xPos) {
+    xPos_ = xPos;
+}
+
 // Get the vertical coordinate
 float Cat::getYPosition() {
     return yPos_;
+}
+
+// Set the vertical coordinate - for testing
+void Cat::setYPosition(int yPos) {
+    yPos_ = yPos;
 }

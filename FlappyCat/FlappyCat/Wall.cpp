@@ -10,7 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include "Cat.hpp"
 
-// Construct a wall with a hole = 25% the wall height
+// Construct a wall with a hole of which the width is a fixed percentage of the wall height
 // the hole position on the wall is random
 Wall::Wall (int screenHeight, int xIniPos, int width, sf::Texture & texture ) {
     

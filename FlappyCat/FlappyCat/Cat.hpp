@@ -51,8 +51,14 @@ public:
     // Get the horizontal coordinate
     float getXPosition();
     
+    // Set the horizontal coordinate
+    void setXPosition(int xPos);
+    
     // Get the vertical coordinate
     float getYPosition();
+    
+    // Set the vertical coordinate
+    void setYPosition(int yPos);
     
 };
 

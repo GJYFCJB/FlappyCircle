@@ -13,6 +13,7 @@
 #include "Wall.hpp"
 #include "WallQueue.hpp"
 #include "HelperFunction.hpp"
+//#include "TestFunctions.hpp"
 #include "Grass.hpp"
 
 using namespace std;
@@ -37,7 +38,6 @@ int main() {
     
     sf::Texture catTexture;
     catTexture.loadFromFile("cat_texture.png");
-    catTexture.setRepeated(true);
     
     
     // Constructor for the cat
@@ -62,6 +62,9 @@ int main() {
     // Create a variable to track if the game starts
     // If not, prompt the user to hit some key to start
     bool hasStarted = false;
+    
+    // Create a variable to track the walls' moving speed
+    float xSpeed = -3;
     
     // Start the game
     while (window.isOpen())
@@ -129,7 +132,8 @@ int main() {
             // If no key is pressed, the cat drops to the ground
             // and the walls move to the left by 3 pixels/frame
             cat.drop();
-            walls.move(-3);
+            walls.move(xSpeed);
+            xSpeed -= 0.008; // walls moving faster as we go
             
             // If the Space key is pressed, the cat jumps by 7 pixels/frame
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
