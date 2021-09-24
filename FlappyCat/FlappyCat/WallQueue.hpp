@@ -22,13 +22,17 @@ public:
     int gap_;
     
 public:
-    
+    // Construct a WallQueue object, i.e. a queue of walls
+    // Parameters: Number of walls, gap length in pixels between walls, and texture
     WallQueue (int numWalls, int gap, sf::Texture & texture);
     
+    // Push all walls to the render window
     void draw (sf::RenderWindow & window);
     
+    // Move (to the left if xSpeed < 0)
     void move (float xSpeed);
     
+    // Calculate the user score = how many walls the cat has passed
     int calculateScore (Cat & theCat);
 };
 

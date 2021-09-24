@@ -23,18 +23,28 @@ private:
     
 public:
     
-    Wall ( float screenHeight, int xIniPos, int width, sf::Texture & texture );
+    // Construct a wall with a hole = 25% the wall height
+    // the hole position on the wall is random
+    Wall ( int screenHeight, int xIniPos, int width, sf::Texture & texture );
     
+    // Push the objects to the render window
     void draw (sf::RenderWindow & window);
     
     void setXPosition(int xPos);
     
     int getXPosition();
     
+    // set the walls' moving speed
+    // the walls should be moving along the x-axis (i.e. horizontally) only
+    // so we only need the xSpeed parameter
     void move (float xSpeed);
     
+    // If the wall passed the cat (to the left of the cat), return true
+    // This helps calculate the score later on
     bool isPastCat (Cat theCat);
     
+    // When the cat hits the wall or ground or ceiling, return true as the cue to end the game
+
     bool isCollided (Cat & theCat);
 
 };

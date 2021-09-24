@@ -14,8 +14,13 @@
 #include "Cat.hpp"
 #include <string>
 
-void printGameOverMessage (std::string message, sf::Color fontColor, int scrWidth, int scrHeight, sf::RenderWindow & window);
-
+// Print text to the game screen (e.g. the score at the lower right)
 void printMessage (std::string message, sf::Color fontColor, int fontSize, int xPos, int yPos, sf::RenderWindow & window);
+
+// Print important text message with box (e.g. welcome screen, game over screen, pause screen)
+void printMessageWithBox (std::string message, sf::Color fontColor, int scrWidth, int scrHeight, sf::RenderWindow & window);
+
+// Draw (Push to render window) all (cat, grass, walls, background color)
+void drawAll (Cat &theCat, WallQueue &walls, Grass &grass, sf::RenderWindow & window);
 
 #endif /* HelperFunction_hpp */

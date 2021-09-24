@@ -20,16 +20,17 @@ private:
     // the rectangle that contains the grasss picture
     sf::Sprite grassRec_;
     
-    int width, height; // in pixels
+    int width, height; // width and height of the glass block in pixels
+    
+    // for determining if the cat hits the grass
     friend class Cat;
     
 public:
     
-    // the grass portion on the screen is to the bottom starting from the left edge to the right edge
-    // width should be equal to screen width
-    
+    // constructor for the grass block
     Grass (int grassHeight, int scrWidth, int scrHeight, sf::Texture & grassTexture);
     
+    // push the grass bloc to the render window
     void draw (sf::RenderWindow & window);
     
 };

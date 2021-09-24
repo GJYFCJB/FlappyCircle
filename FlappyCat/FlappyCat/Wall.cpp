@@ -10,19 +10,28 @@
 #include <SFML/Graphics.hpp>
 #include "Cat.hpp"
 
-Wall::Wall (float screenHeight, int xIniPos, int width, sf::Texture & texture ) { // randomly generate a wall with a hole = 25% the wall height
+// Construct a wall with a hole = 25% the wall height
+// the hole position on the wall is random
+Wall::Wall (int screenHeight, int xIniPos, int width, sf::Texture & texture ) {
     
     xIniPos_ = xIniPos;
     width_ = width;
     
-    // randomly generate a hole in the wall (25% wall height)
-    // generate a random number from 1 to 70 and divide it by 100
-    // this random number should represent the height of the upper wall in percentage of the total screen height
-    float upperHeightPct = ((float) (rand() % 70))/100;
+    // As each wall has a hole in it, the hole divides the wall into 2 parts: the upper wall and the lower wall
+    // We hardcoded the size of the hole = 25% screen height
+    // Therefore the height of the upper and lower wall should add up to 75% screen height
+    // The height of either of them should be generated randomly, as long as the sum of two heights = 75% screen height
+    
+    // To randomly generate the heights, we do as follows:
+    // Generate a random number from 5 to 70 and divide it by 100
+    // This number (upper height percentage) represents the height of the upper wall as a percentage of the total screen height, which means the upper wall can be from 5% to 70% of the screen height. We have the hole = 25% screen height, so the lower wall should be 5% to 70% of the screen height as well
+    float upperHeightPct = ((float) (5 + rand() % 66))/100;
+    
+    // From the percentage, calculate the actual heights in pixels
     upperHeight_ = screenHeight*upperHeightPct;
     lowerHeight_ = screenHeight*(1 - upperHeightPct - 0.25);
     
-    //set the walls' textrue and size
+    //set the walls' texture and size
     upperWall_.setTexture(texture);
     upperWall_.setTextureRect(sf::IntRect(0, 0, width, upperHeight_));
     lowerWall_.setTexture(texture);
@@ -33,14 +42,15 @@ Wall::Wall (float screenHeight, int xIniPos, int width, sf::Texture & texture ) 
     lowerWall_.setPosition(xIniPos_, screenHeight - lowerHeight_);
 }
 
-   //draw the objects to the render window
+// Push the objects to the render window
 void Wall::draw (sf::RenderWindow & window) {
     
     window.draw(std::move(upperWall_));
     window.draw(std::move(lowerWall_));
     
 }
- //set wall's x positon
+
+// Set wall's x position
 void Wall::setXPosition(int xPos) {
     
     upperWall_.setPosition(xPos, 0);
@@ -55,7 +65,9 @@ int Wall::getXPosition() {
     
 }
 
- //set the walls' speed
+// set the walls' moving speed
+// the walls should be moving along the x-axis (i.e. horizontally) only
+// so we only need the xSpeed parameter
 void Wall::move (float xSpeed) {
     
     upperWall_.move(xSpeed, 0);
@@ -63,14 +75,15 @@ void Wall::move (float xSpeed) {
     
 }
 
-// Cat went throught the wall, then got the score.
+// If the wall passed the cat (to the left of the cat), return true
+// This helps calculate the score later on
 bool Wall::isPastCat (Cat theCat) {
     
     return getXPosition() < theCat.getXPosition() - width_;
     
 }
 
-//when the cat hits the wall or ground or ceiling,then game is over.
+// When the cat hits the wall or ground or ceiling, return true as the cue to end the game
 bool Wall::isCollided (Cat & theCat) {
     
     sf::FloatRect catBound = theCat.catRec_.getGlobalBounds();
