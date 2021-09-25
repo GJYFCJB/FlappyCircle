@@ -42,6 +42,28 @@ Wall::Wall (int screenHeight, int xIniPos, int width, sf::Texture & texture ) {
     lowerWall_.setPosition(xIniPos_, screenHeight - lowerHeight_);
 }
 
+// Constructor that allows modifications of the hole in the wall
+// For testing purposes only
+Wall::Wall (int screenHeight, int xIniPos, int width, float upperHeightPct, sf::Texture & texture ) {
+    
+    xIniPos_ = xIniPos;
+    width_ = width;
+    
+    // From the percentage, calculate the actual heights in pixels
+    upperHeight_ = screenHeight*upperHeightPct;
+    lowerHeight_ = screenHeight*(1 - upperHeightPct - 0.25);
+    
+    //set the walls' texture and size
+    upperWall_.setTexture(texture);
+    upperWall_.setTextureRect(sf::IntRect(0, 0, width, upperHeight_));
+    lowerWall_.setTexture(texture);
+    lowerWall_.setTextureRect(sf::IntRect(0, 0, width, lowerHeight_));
+    
+    //set the walls' x and y position
+    upperWall_.setPosition(xIniPos_, 0);
+    lowerWall_.setPosition(xIniPos_, screenHeight - lowerHeight_);
+}
+
 // Push the objects to the render window
 void Wall::draw (sf::RenderWindow & window) {
     

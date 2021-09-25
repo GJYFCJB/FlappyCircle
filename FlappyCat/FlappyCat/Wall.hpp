@@ -27,6 +27,10 @@ public:
     // the hole position on the wall is random
     Wall ( int screenHeight, int xIniPos, int width, sf::Texture & texture );
     
+    // Constructor that allows modifications of the hole in the wall
+    // For testing purposes only
+    Wall (int screenHeight, int xIniPos, int width, float upperHeightPct, sf::Texture & texture );
+    
     // Push the objects to the render window
     void draw (sf::RenderWindow & window);
     

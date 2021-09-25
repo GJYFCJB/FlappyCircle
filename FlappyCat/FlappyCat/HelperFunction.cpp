@@ -71,9 +71,9 @@ void printMessageWithBox (std::string message, sf::Color fontColor, int scrWidth
     
 }
 
-void drawAll (Cat &theCat, WallQueue &walls, Grass &grass, sf::RenderWindow & window) {
+void drawAll (Cat &theCat, WallQueue &walls, Grass &grass, float darkness, sf::RenderWindow & window) {
     
-    sf::Color bgColor = sf::Color(4, 156, 216, 150); // set background to blue
+    sf::Color bgColor = sf::Color(104 - darkness, 156 - darkness, 216 - darkness, 250); // set background to blue/darkblue depending on the darkness parameter
     window.clear(bgColor);
     theCat.draw(window);
     walls.draw(window);

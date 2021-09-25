@@ -14,6 +14,8 @@ Cat::Cat (sf::Texture & catTexture) {
     
     catRec_.setTexture(catTexture);
     catRec_.setTextureRect(sf::IntRect(0, 0, 70, 55)); // texture image size: 30x23 pixels
+    
+    catRec_.setPosition(xPos_, yPos_);
  
 }
 
@@ -30,6 +32,7 @@ void Cat::drop () {
 void Cat::jump (int jumpDist) {
     
     velo_ = -jumpDist ;
+    catRec_.setPosition(xPos_, yPos_);
     
 }
 
@@ -67,6 +70,7 @@ float Cat::getXPosition() {
 // Set the horizontal coordinate - for testing
 void Cat::setXPosition(int xPos) {
     xPos_ = xPos;
+    catRec_.setPosition(xPos_, yPos_);
 }
 
 // Get the vertical coordinate
@@ -77,4 +81,5 @@ float Cat::getYPosition() {
 // Set the vertical coordinate - for testing
 void Cat::setYPosition(int yPos) {
     yPos_ = yPos;
+    catRec_.setPosition(xPos_, yPos_);
 }

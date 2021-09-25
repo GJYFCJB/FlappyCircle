@@ -32,6 +32,12 @@ public:
     // Move (to the left if xSpeed < 0)
     void move (float xSpeed);
     
+    // Return the wall vector in main.cpp so user can iterate through every wall in the queue
+    // but does not allow changes to the vector
+    vector<Wall> getWallVector() const {
+        return walls;
+    }
+    
     // Calculate the user score = how many walls the cat has passed
     int calculateScore (Cat & theCat);
 };
