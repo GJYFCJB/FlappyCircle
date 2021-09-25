@@ -9,5 +9,5 @@ The gameplay is simple – it's similar to the once popular mobile game Flappy B
 * To make the cat jump, press Space ![Normal Gameplay](FlappyCat/GamePics/game.png)
 * The rule of three in our game:
   * Don't hit the ceiling! ![Don't Hit The Ceiling](FlappyCat/GamePics/hit_ceiling.png)
-  * Don't hit the grass! [Don't Hit The Grass](FlappyCat/GamePics/hit_grass.png)
+  * Don't hit the grass! [Don't Hit The Grass](FlappyCat/GamePics/hit_ground.png)
   * Last and probably the hardest, don't hit the wall! [Don't Hit The Wall](FlappyCat/GamePics/hit_wall.png)
