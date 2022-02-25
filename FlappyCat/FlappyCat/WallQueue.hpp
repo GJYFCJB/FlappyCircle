@@ -2,7 +2,7 @@
 //  WallQueue.hpp
 //  FlappyCat
 //
-//  Created by Quang Pham on 9/23/21.
+//  Created by Jin Gu on 9/23/21.
 //
 
 #ifndef Walls_hpp
