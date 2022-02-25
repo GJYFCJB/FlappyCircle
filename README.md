@@ -1,6 +1,27 @@
 # Flappy Circle
 
+**This is my team project with my classmates called Flappy Circle similar as Flappy Bird. I was responsible for writing the grass and WallQueue class in the game which is about 30% lines code of the whole project.**
 
+**First Class - Wall class :** As shown in the page: 
+
+Each wall has a hole in it, the hole divides the wall into 2 parts: the upper wall and the lower wall
+We hardcoded the size of the hole = 25% screen height;
+Therefore the height of the upper and lower wall should add up to 75% screen height;
+The height of either of them should be generated randomly, as long as the sum of two heights = 75% screen height;
+
+To randomly generate the heights, we do as follows:
+
+Generate a random number from 5 to 70 and divide it by 100.
+
+This number (upper height percentage) represents the height of the upper wall as a percentage of the total screen height, which means the upper wall can be from 5% to 70% of the screen height. We have the hole = 25% screen height, so the lower wall should be 5% to 70% of the screen height as well.
+
+**Second Class - WallQueue class:**
+
+We use the vector to store wall of the WallQueue.
+
+Write calculateScore function to record the score by counting walls that the cat has passed.
+
+Introduction: 
 1. How to play
 The gameplay is simple – it's similar to the once popular mobile game Flappy Bird. But there is no bird in this game – you would have to guide a cat through the obstacles instead.
 
